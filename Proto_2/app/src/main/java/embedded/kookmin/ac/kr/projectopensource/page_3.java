@@ -1,0 +1,49 @@
+package embedded.kookmin.ac.kr.projectopensource;
+
+/**
+ * Created by 승수 on 2015-11-22.
+ */
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+/**
+ * Created by 승수 on 2015-11-22.
+ */
+public class page_3 extends android.support.v4.app.Fragment { //슬라이드 마지막 페이지
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup
+            container, Bundle savedInstanceState) {
+
+        LinearLayout linearLayout = (LinearLayout)
+                inflater.inflate(R.layout.page, container, false);
+
+        LinearLayout background = (LinearLayout)
+                linearLayout.findViewById(R.id.background);
+        TextView page_num = (TextView) linearLayout.findViewById
+                (R.id.page_num);
+        page_num.setText(String.valueOf(3));
+        Button bBack = (Button) linearLayout.findViewById(R.id.bt_back);
+        bBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().finish();
+            }
+        });
+        background.setBackground(new ColorDrawable
+                (Color.parseColor("#66CDAA")));
+
+        return linearLayout;
+    }
+}
